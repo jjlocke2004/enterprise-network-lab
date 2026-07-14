@@ -72,14 +72,15 @@ Enterprise-Network-Lab/
 │   ├── vlan-design.md
 │   ├── device-inventory.md
 │   ├── configuration-notes.md
+│   ├── dhcp-coonfiguration.md
 │   └── troubleshooting.md
 │
 ├── screenshots/
 │   ├── topology/
+│   ├── device-management/
 │   ├── switching/
 │   ├── routing/
 │   ├── dhcp/
-│   └── validation/
 │
 └── Enterprise-Network-Lab.pkt
 ```
