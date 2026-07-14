@@ -89,7 +89,7 @@ Detailed implementation documentation is organized within the `docs` directory.
 | Document | Description |
 |-----------|-------------|
 | **![ip-addressing.md](docs/ip-addressing.md)** | IP addressing plan, subnet allocation, gateways, and DHCP scopes |
-| **![vlan-design.md](docs/vlan-desgin.md)** | VLAN assignments, switch port mappings, and trunk design |
+| **![vlan-design.md](docs/vlan-design.md)** | VLAN assignments, switch port mappings, and trunk design |
 | **![device-inventory.md](docs/device-inventory.md)** | Inventory of all network devices and infrastructure |
 | **![configuration-notes.md](docs/configuration-notes.md)** | Summary of configuration tasks completed throughout implementation |
 | **![troubleshooting.md](docs/troubleshooting.md)** | Common issues encountered during deployment and their resolutions |
