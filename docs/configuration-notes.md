@@ -14,7 +14,9 @@ The following baseline configuration was applied to all Cisco networking devices
 - DNS lookup disabled
 - Console password configured
 - Configurations saved to startup configuration
+  
 ![Basic Device Config](/screenshots/device-management/basic-device-config.png)
+
 ---
 
 # VLAN Configuration
