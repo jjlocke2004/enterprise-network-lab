@@ -32,9 +32,12 @@ Each switch was configured with:
 
 ### Configuration
 
+*Setting up Static IP for Core Switch (Repeated for both office switches but with their respective addresses)*
+
 ![Switch Management Interface](../screenshots/switching/switch-management-ip-config.png)
 
 ### Verification
+
 
 ![Management Interface Verification](../screenshots/switching/switch-management-ip-verification.png)
 
@@ -58,6 +61,8 @@ This provides encrypted remote management while preventing insecure Telnet acces
 
 ### Configuration
 
+*SSH Config for the Core Switch (Repeated for Router (R1) AND both office switches)*
+
 ![SSH Configuration](../screenshots/device-management/ssh-config.png)
 
 ### Verification
@@ -76,6 +81,8 @@ and provide legal notice against unauthorized access.
 
 
 ### Configuration
+
+*MOTD Banner config for Router R1 (Repeated for all network devices)*
 
 ![Banner Configuration](../screenshots/device-management/banner-motd-config.png)
 
@@ -100,6 +107,8 @@ while allowing normal workstation replacements.
 
 ### Configuration
 
+*Port Security config for Office 1 switch (Repeated for all the switches dependant on what ports are used)*
+
 ![Port Security Configuration](/screenshots/switching/port-security-config.png)
 
 ### Verification
@@ -116,7 +125,7 @@ and prevent unautorized devices from being connected.
 Interfaces reserved for future expansion remain diabled until required.
 
 ### Configuration
-
+*Any unused ports shutdown (used ports verfied using 'show vlan brief' | repeated for all network devices) 
 ![Unused Port Shutdown Configuration](/screenshots/switching/unused-ports-shutdown-config.png)
 
 ### Verification
