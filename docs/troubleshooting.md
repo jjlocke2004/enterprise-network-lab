@@ -2,128 +2,228 @@
 
 ## Overview
 
-This document records issues encountered during implementation and the steps taken to resolve them.
+Throughout the implementation of the Enterprise Network Lab, several configuration and connectivity issues were encountered while deploying VLAN segmentation, inter-VLAN routing, centralized DHCP, and basic network security controls.
+
+Each issue was identified, isolated, and resolved using Cisco IOS verification commands and systematic troubleshooting techniques. Documenting these issues provides a record of the deployment process while demonstrating practical problem-solving throughout the project.
 
 ---
 
-# Issue 1
+# Native VLAN Mismatch Warning
 
-## Native VLAN Mismatch
+## Problem
 
-### Symptoms
+A native VLAN mismatch warning appeared after configuring switch interfaces.
 
-Switch reported a native VLAN mismatch warning during configuration.
+## Cause
 
-### Cause
+One side of a trunk link was temporarily configured differently than the other during the trunk configuration process.
 
-An uplink between switches was accidentally connected to an access interface and assigned to a user VLAN.
+## Resolution
 
-### Resolution
+Both interfaces were verified and configured as IEEE 802.1Q trunk ports with matching settings. Trunk operation was confirmed using:
 
-- Re-cabled the uplink using the appropriate Gigabit interface.
-- Configured both ends of the link as 802.1Q trunk ports.
-- Verified operation using:
-  
-```
+```cisco
 show interfaces trunk
 ```
 
-# Issue 2
-
-## Server Unreachable
-
-### Symptoms
-
-Clients successfully reached router gateways but could not communicate with DC01.
-
-### Cause
-
-Server switch ports remained assigned to VLAN 1 instead of Server VLAN
-
-### Resolution
-
-Assigned the correct switch ports to VLAN 60.
-
-Verified communication using ping and taking note of successful ICMP requests.
-
 ---
 
-# Issue 3
+# Router Interface Administratively Down
 
-## Incorrect DHCP Scop Assignment
+## Problem
 
-### Symptoms
+The router-to-core switch connection remained down, preventing inter-VLAN communication.
 
-One IT workstation received an IP address from the HR subnet.
+## Cause
 
-### Cause 
+The physical router interface had not yet been enabled after configuration.
 
-The workstation was physically connected to a switch port assigned to VLAN 30
+## Resolution
 
-### Resolution
+The interface was enabled using:
 
-Corrected the physical cabling to match the documented network design.
-
-Renewed the DHCP lease and confirmed the workstation received an address from the IT DHCP scope.
-
----
-
-# Issue 4
-
-## Router Link Down
-
-### Symptoms
-
-Router interface remained down and the rouer failed to appear in CDP neighbor discovery.
-
-### Cause
-
-The router interface was administratively shutdown
-
-### Resolution
-
-Enabled the interface using:
-
-```
-interface GigabitEthernet0/0
-no shutdown
+```cisco
+interface FastEthernet0/0
+ no shutdown
 ```
 
-Verfied operation using:
+The interface status was verified using:
 
-```
+```cisco
 show ip interface brief
 ```
 
+Once enabled, connectivity between the router and core switch was restored.
+
 ---
 
-# Issue 5
+# Incorrect Server VLAN Assignment
 
-## Router Trunk Configuration
+## Problem
 
-### Symptoms
+The domain controller (DC01) and shared network printer were initially assigned to incorrect switch interfaces.
 
-Inter-VLAN routing failed
+## Cause
 
-### Cause
+The switch port assignments did not match the intended network topology.
 
-The switch interface connected to the router was not configured as an 802.1Q trunk.
+## Resolution
 
-### Resolution
+The server and printer were moved to the appropriate access ports assigned to VLAN 60 (SERVERS). The VLAN assignment was verified using:
 
-Configured the switch interface as a trunk an verified the allowed VLANs using:
-
+```cisco
+show vlan brief
 ```
-show interface trunk
+
+---
+
+# Incorrect Physical Cabling
+
+## Problem
+
+One Information Technology workstation received an IP address from the Human Resources subnet.
+
+## Cause
+
+The workstation was physically connected to a switch port assigned to VLAN 30 instead of VLAN 20.
+
+## Resolution
+
+The physical cable was moved to the correct access port, the DHCP lease was renewed, and the workstation successfully received an address from the Information Technology DHCP scope.
+
+---
+
+# DHCP Relay Configuration
+
+## Problem
+
+Client workstations located on remote VLANs were unable to obtain IP addresses from the centralized DHCP server.
+
+## Cause
+
+DHCP broadcast traffic does not cross Layer 3 boundaries by default.
+
+## Resolution
+
+The `ip helper-address` command was configured on each client-facing router subinterface to forward DHCP requests to DC01.
+
+Following implementation, clients successfully received addresses from their respective DHCP scopes.
+
+---
+
+# Switch Management Interfaces
+
+## Problem
+
+The switches initially lacked management IP addresses, preventing centralized remote administration.
+
+## Cause
+
+No Switch Virtual Interface (SVI) or default gateway had been configured.
+
+## Resolution
+
+A management interface was configured on VLAN 10 for each switch, and the appropriate default gateway was assigned.
+
+Management connectivity was verified after configuration.
+
+---
+
+# SSH Remote Management
+
+## Problem
+
+Network devices could only be managed through the local console connection.
+
+## Cause
+
+SSH had not yet been configured.
+
+## Resolution
+
+Each network device was configured with:
+
+- Local administrator account
+- Enterprise domain name
+- 2048-bit RSA encryption keys
+- SSH Version 2
+- VTY lines restricted to SSH only
+
+Successful SSH configuration was verified using:
+
+```cisco
+show ip ssh
 ```
+
+---
+
+# Access Port Security
+
+## Problem
+
+Switch access ports initially accepted any connected device without restriction.
+
+## Cause
+
+Port Security had not yet been implemented.
+
+## Resolution
+
+Port Security was configured on all access ports using:
+
+- Maximum of one MAC address
+- Sticky MAC address learning
+- Restrict violation mode
+
+Configuration was verified using:
+
+```cisco
+show port-security
+```
+
+---
+
+# Unused Switch Interfaces
+
+## Problem
+
+Unused switch interfaces remained enabled after the initial network deployment.
+
+## Cause
+
+Cisco switches leave unused interfaces enabled by default.
+
+## Resolution
+
+Unused interfaces were administratively shut down and reserved for future expansion, reducing the attack surface of the network.
 
 ---
 
 # Lessons Learned
 
-Throughout implementation several important network conecpts were reinforced:
+This project reinforced several important networking concepts:
 
-- Proper physical cabling is just as important as logical configuration.
-- DHCP assigns addresses based on VLAN membership, not device names.
-- Router-on-a-Stick requires both trunk ports and correctly configured subinterfaces.
-- Validation should be performed after each major configuration step to simplify troubleshooting
+- Physical topology and logical topology must remain synchronized.
+- DHCP address assignment depends on VLAN membership rather than device names.
+- Router-on-a-Stick requires correctly configured router subinterfaces and operational trunk links.
+- Incremental testing after each major configuration change significantly reduces troubleshooting time.
+- Maintaining accurate documentation throughout implementation improves deployment consistency and simplifies future maintenance.
+
+---
+
+# Validation
+
+Following implementation and troubleshooting, the completed network successfully demonstrated:
+
+- VLAN segmentation
+- IEEE 802.1Q trunking
+- Router-on-a-Stick inter-VLAN routing
+- Centralized DHCP deployment
+- DHCP relay functionality
+- Correct client address assignment
+- Client-to-server communication
+- Client-to-printer communication
+- SSH remote management
+- Switch management interfaces
+- Port Security
+- Administrative shutdown of unused switch interfaces
