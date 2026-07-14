@@ -22,13 +22,17 @@ Inter-VLAN communication is provided by a Cisco ISR 2911 router configured using
 | 60 | SERVERS | Server Infrastructure | 10.10.60.0/24 |
 | 70 | GUEST | Guest Devices | 10.10.70.0/24 |
 
+*Creating the VLANs on the Core Switch (Repeated for both Office Switches)*
+
+![VLAN Creation](/screenshots/switching/vlan-creation.png)
+
 ---
 
 # Switch Port Assignments
 
 ## SW-Office1
 
-| Interface | Connected Device | VLAN |
+| Port | Connected Device | VLAN |
 |-----------|------------------|------|
 | Fa0/1 | PC-IT01 | 20 |
 | Fa0/2 | PC-IT02 | 20 |
@@ -41,7 +45,7 @@ Inter-VLAN communication is provided by a Cisco ISR 2911 router configured using
 
 ## SW-Office2 
 
-| Interface | Connected Device | VLAN |
+| Port | Connected Device | VLAN |
 |-----------|------------------|------|
 | Fa0/1 | PC-SALES01 | 50 |
 | Fa0/2 | PC-SALES02 | 50 |
@@ -52,10 +56,14 @@ Inter-VLAN communication is provided by a Cisco ISR 2911 router configured using
 
 ## SW-Core
 
-| Interface | Connected Device | VLAN |
+| Port | Connected Device | VLAN |
 |-----------|------------------|------|
-| Fa0/23 | DC01 | 60 |
-| Fa0/24 | Printer01 | 60 |
+| Fa0/5 | DC01 | 60 |
+| Fa0/6 | Printer01 | 60 |
+
+*Setting Access Port Assignments for Office Switch #1 (Repeated steps with corresponding ports for other switches)*
+
+![Access Port Assignment](/screenshots/switching/access-port-assignment.png)
 
 ---
 
@@ -65,6 +73,10 @@ Inter-VLAN communication is provided by a Cisco ISR 2911 router configured using
 | R1 ↔ SW-Core | Router-on-a-Stick trunk carrying all VLANs | 
 | SW-Core ↔ SW-Office1 | 802.1Q trunk carrying all VLAN traffic |
 | SW-Core ↔ SW-Office2 | 802.1Q trunk carrying all VLAN traffic |
+
+*Trunk Links*
+
+![Trunk Links](/screenshots/switching/trunk-links.png)
 
 ---
 
