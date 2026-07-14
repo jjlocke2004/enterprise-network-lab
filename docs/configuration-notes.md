@@ -14,7 +14,9 @@ The following baseline configuration was applied to all Cisco networking devices
 - DNS lookup disabled
 - Console password configured
 - Configurations saved to startup configuration
-  
+
+*Setting hostname and password on Office Switch #1 (Repeated for all switches)*
+
 ![Basic Device Config](/screenshots/device-management/basic-device-config.png)
 
 ---
@@ -66,6 +68,9 @@ Each VLAN was assigned:
 - 802.1Q encapsulation
 - Default gateway
 
+  *Router on a stick verification*
+![Router-on-a-Stick](/screenshots/routing/router-on-a-stick.png)
+
 ---
 
 # DHCP
@@ -77,6 +82,10 @@ Seperate DHCP scopes were created for each client VLAN.
 The router forwards DHCP broadcasts using the 'ip helper-address' command.
 
 Infrastructure devices reamin statically addressed.
+
+*DHCP Relay Configuration on the Router*
+
+![DHCP Relay](/screenshots/dhcp/dhcp-relay.png)
 
 ---
 
