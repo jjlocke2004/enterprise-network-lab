@@ -74,7 +74,7 @@ Inter-VLAN communication is provided by a Cisco ISR 2911 router configured using
 | SW-Core ↔ SW-Office1 | 802.1Q trunk carrying all VLAN traffic |
 | SW-Core ↔ SW-Office2 | 802.1Q trunk carrying all VLAN traffic |
 
-*Trunk Links*
+*Trunk Links Verficiation*
 
 ![Trunk Links](/screenshots/switching/trunk-links.png)
 
