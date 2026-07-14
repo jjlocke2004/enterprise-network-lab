@@ -96,6 +96,7 @@ Detailed implementation documentation is organized within the `docs` directory.
 | **![vlan-design.md](docs/vlan-design.md)** | VLAN assignments, switch port mappings, and trunk design |
 | **![device-inventory.md](docs/device-inventory.md)** | Inventory of all network devices and infrastructure |
 | **![configuration-notes.md](docs/configuration-notes.md)** | Summary of configuration tasks completed throughout implementation |
+| **![dhcp-configuration.md](docs/dhcp-configuration.md)** | DHCP server configuration, relay implementation, address pool design, and client address assignment |
 | **![troubleshooting.md](docs/troubleshooting.md)** | Common issues encountered during deployment and their resolutions |
 
 ---
