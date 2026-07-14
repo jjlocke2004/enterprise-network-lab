@@ -1,0 +1,189 @@
+SW-Office1#show running-config
+Building configuration...
+
+Current configuration : 3564 bytes
+!
+version 15.0
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname SW-Office1
+!
+enable secret 5 $1$mERr$OvnNRHE5goLSrORi3FY1X1
+!
+!
+!
+ip ssh version 2
+no ip domain-lookup
+ip domain-name enterprise.local
+!
+username admin secret 5 $1$mERr$6fdVVzAe9YVkjaaQkZ9aU/
+!
+!
+!
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+interface FastEthernet0/1
+ description IT Departmnet
+ switchport access vlan 20
+ switchport mode access
+ switchport port-security
+ switchport port-security mac-address sticky
+ switchport port-security violation restrict
+!
+interface FastEthernet0/2
+ description IT Departmnet
+ switchport access vlan 20
+ switchport mode access
+ switchport port-security
+ switchport port-security mac-address sticky
+ switchport port-security violation restrict
+!
+interface FastEthernet0/3
+ description Human Resources
+ switchport access vlan 30
+ switchport mode access
+ switchport port-security
+ switchport port-security mac-address sticky
+ switchport port-security violation restrict
+!
+interface FastEthernet0/4
+ description Human Resources
+ switchport access vlan 30
+ switchport mode access
+ switchport port-security
+ switchport port-security mac-address sticky
+ switchport port-security violation restrict
+!
+interface FastEthernet0/5
+ description Finance
+ switchport access vlan 40
+ switchport mode access
+ switchport port-security
+ switchport port-security mac-address sticky
+ switchport port-security violation restrict
+!
+interface FastEthernet0/6
+ description Finance
+ switchport access vlan 40
+ switchport mode access
+ switchport port-security
+ switchport port-security mac-address sticky
+ switchport port-security violation restrict
+!
+interface FastEthernet0/7
+ description UNUSED PORT
+ shutdown
+!
+interface FastEthernet0/8
+ description UNUSED PORT
+ shutdown
+!
+interface FastEthernet0/9
+ description UNUSED PORT
+ shutdown
+!
+interface FastEthernet0/10
+ description UNUSED PORT
+ shutdown
+!
+interface FastEthernet0/11
+ description UNUSED PORT
+ shutdown
+!
+interface FastEthernet0/12
+ description UNUSED PORT
+ shutdown
+!
+interface FastEthernet0/13
+ description UNUSED PORT
+ shutdown
+!
+interface FastEthernet0/14
+ description UNUSED PORT
+ shutdown
+!
+interface FastEthernet0/15
+ description UNUSED PORT
+ shutdown
+!
+interface FastEthernet0/16
+ description UNUSED PORT
+ shutdown
+!
+interface FastEthernet0/17
+ description UNUSED PORT
+ shutdown
+!
+interface FastEthernet0/18
+ description UNUSED PORT
+ shutdown
+!
+interface FastEthernet0/19
+ description UNUSED PORT
+ shutdown
+!
+interface FastEthernet0/20
+ description UNUSED PORT
+ shutdown
+!
+interface FastEthernet0/21
+ description UNUSED PORT
+ shutdown
+!
+interface FastEthernet0/22
+ description UNUSED PORT
+ shutdown
+!
+interface FastEthernet0/23
+ description UNUSED PORT
+ shutdown
+!
+interface FastEthernet0/24
+ description UNUSED PORT
+ shutdown
+!
+interface GigabitEthernet0/1
+ description Uplink to Core
+ switchport mode trunk
+!
+interface GigabitEthernet0/2
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+interface Vlan10
+ ip address 10.10.10.3 255.255.255.0
+!
+ip default-gateway 10.10.10.1
+!
+banner motd ^C
+
+***************************************************
+* Enterprise Network Lab                          *
+* Authorized Access Only                          *
+* Unauthorized access is prohibited.              *
+***************************************************
+
+^C
+!
+!
+!
+line con 0
+ password NetworkingLab2026!
+ login
+!
+line vty 0 4
+ login local
+ transport input ssh
+line vty 5 15
+ login local
+ transport input ssh
+!
+!
+!
+!
+end

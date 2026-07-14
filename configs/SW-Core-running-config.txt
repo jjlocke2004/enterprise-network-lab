@@ -1,0 +1,156 @@
+SW-Core#show running-config
+Building configuration...
+
+Current configuration : 2504 bytes
+!
+version 15.0
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname SW-Core
+!
+enable secret 5 $1$mERr$OvnNRHE5goLSrORi3FY1X1
+!
+!
+!
+ip ssh version 2
+no ip domain-lookup
+ip domain-name enterprise.local
+!
+username admin secret 5 $1$mERr$6fdVVzAe9YVkjaaQkZ9aU/
+!
+!
+!
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+interface FastEthernet0/1
+ description Router Uplink
+ switchport mode trunk
+!
+interface FastEthernet0/2
+ shutdown
+!
+interface FastEthernet0/3
+ shutdown
+!
+interface FastEthernet0/4
+ description Server VLAN
+ switchport access vlan 60
+ switchport mode access
+ switchport port-security
+ switchport port-security mac-address sticky
+ switchport port-security violation restrict
+!
+interface FastEthernet0/5
+ description Server VLAN
+ switchport access vlan 60
+ switchport mode access
+ switchport port-security
+ switchport port-security mac-address sticky
+ switchport port-security violation restrict
+!
+interface FastEthernet0/6
+ shutdown
+!
+interface FastEthernet0/7
+ shutdown
+!
+interface FastEthernet0/8
+ shutdown
+!
+interface FastEthernet0/9
+ shutdown
+!
+interface FastEthernet0/10
+ shutdown
+!
+interface FastEthernet0/11
+ shutdown
+!
+interface FastEthernet0/12
+ shutdown
+!
+interface FastEthernet0/13
+ shutdown
+!
+interface FastEthernet0/14
+ shutdown
+!
+interface FastEthernet0/15
+ shutdown
+!
+interface FastEthernet0/16
+ shutdown
+!
+interface FastEthernet0/17
+ shutdown
+!
+interface FastEthernet0/18
+ shutdown
+!
+interface FastEthernet0/19
+ shutdown
+!
+interface FastEthernet0/20
+ shutdown
+!
+interface FastEthernet0/21
+ shutdown
+!
+interface FastEthernet0/22
+ shutdown
+!
+interface FastEthernet0/23
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/24
+ switchport mode access
+ shutdown
+!
+interface GigabitEthernet0/1
+ description Trunk Links
+ switchport mode trunk
+!
+interface GigabitEthernet0/2
+ description Trunk Links
+ switchport mode trunk
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+interface Vlan10
+ ip address 10.10.10.2 255.255.255.0
+!
+ip default-gateway 10.10.10.1
+!
+banner motd ^C
+
+***************************************************
+* Enterprise Network Lab                          *
+* Authorized Access Only                          *
+* Unauthorized access is prohibited.              *
+***************************************************
+
+^C
+!
+!
+!
+line con 0
+ password NetworkingLab2026!
+ login
+!
+line vty 0 4
+ login local
+ transport input ssh
+line vty 5 15
+ login local
+ transport input ssh
+!
+!
+!
+!
+end
