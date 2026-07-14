@@ -5,6 +5,8 @@
 This document summarizes the major configuration tasks completed while building the out network.
 
 ---
+# Physical Topology
+![Physical Topology](screenshots/topology/physical-topology.png)
 
 # Initial Device Configuration
 
@@ -14,7 +16,7 @@ The following baseline configuration was applied to all Cisco networking devices
 - DNS lookup disabled
 - Console password configured
 - Configurations saved to startup configuration
-
+![Basic Device Config](screenshots/device-management/basic-device-config.png)
 ---
 
 # VLAN Configuration
