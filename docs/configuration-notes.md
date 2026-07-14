@@ -68,7 +68,8 @@ Each VLAN was assigned:
 - 802.1Q encapsulation
 - Default gateway
 
-  *Router on a stick verification*
+*Router on a stick verification*
+  
 ![Router-on-a-Stick](/screenshots/routing/router-on-a-stick.png)
 
 ---
