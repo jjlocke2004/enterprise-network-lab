@@ -39,6 +39,9 @@ The first usable IP address within each subnet is reserved as the deault gateway
 | DC01 | 10.10.60.10 | Active Directory, DNS, DHCP |
 | Printer 01 | 10.10.60.20 | Shared Network Printer |
 
+*Setting DC01 Static IP address*
+![DC01 Static IP Config](/screenshots/servers/DC01-static-ip.png)
+
 ---
 
 # Addressing Strategy
