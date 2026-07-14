@@ -22,6 +22,10 @@ Rather than focusing solely on connectivity, this project emphasizes proper netw
 
 ## Network Overview
 
+### Physical Topology
+
+![Physical Topology](/screenshots/topology/physical-topology.png)
+
 ### Devices
 
 - Cisco ISR 2911 Router
@@ -96,18 +100,6 @@ Detailed implementation documentation is organized within the `docs` directory.
 
 ---
 
-## Screenshots
-
-Project screenshots are organized by implementation phase.
-
-- Network Topology
-- Switch Configuration
-- Router Configuration
-- DHCP Configuration
-- Validation Testing
-
----
-
 ## Skills Demonstrated
 
 ### Networking
@@ -134,6 +126,12 @@ Project screenshots are organized by implementation phase.
 ---
 
 ## Validation
+
+### Inter-VLAN Routing Validation
+
+***Successful Ping Test from PC-IT01 (Endpoint) to Gateway, Server, and Shared Network Printer***
+![Inter-VLAN Routing Test](screenshots/routing/inter-vlan-ping-test.png)
+
 
 The completed network was validated by successfully verifying:
 
