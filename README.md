@@ -49,14 +49,16 @@ Rather than focusing solely on connectivity, this project emphasizes proper netw
 
 ## Implemented Features
 
-- VLAN Segmentation
-- Access Port Configuration
-- 802.1Q Trunk Links
-- Router-on-a-Stick
-- Inter-VLAN Routing
-- Centralized DHCP
-- Static Infrastructure Addressing
-- Network Validation and Testing
+VLAN Segmentation
+Router-on-a-Stick
+Centralized DHCP
+SSH Remote Management
+Switch Management VLAN
+Port Security
+Unused Port Hardening
+MOTD Banner
+Static Infrastructure Addressing
+Enterprise Network Documentation
 
 ---
 
@@ -71,8 +73,9 @@ Enterprise-Network-Lab/
 │   ├── ip-addressing.md
 │   ├── vlan-design.md
 │   ├── device-inventory.md
-│   ├── configuration-notes.md
 │   ├── dhcp-coonfiguration.md
+│   ├── security-hardening.md
+│   ├── configuration-notes.md
 │   └── troubleshooting.md
 │
 ├── screenshots/
@@ -98,6 +101,7 @@ Detailed implementation documentation is organized within the `docs` directory.
 | **![device-inventory.md](docs/device-inventory.md)** | Inventory of all network devices and infrastructure |
 | **![configuration-notes.md](docs/configuration-notes.md)** | Summary of configuration tasks completed throughout implementation |
 | **![dhcp-configuration.md](docs/dhcp-configuration.md)** | DHCP server configuration, relay implementation, address pool design, and client address assignment |
+| **![security-hardening.md](docs/security-hardening.md)** | SSH management, switch management VLAN, MOTD banner, port security, and unused port hardening |
 | **![troubleshooting.md](docs/troubleshooting.md)** | Common issues encountered during deployment and their resolutions |
 
 ---
@@ -106,24 +110,35 @@ Detailed implementation documentation is organized within the `docs` directory.
 
 ### Networking
 
-- VLAN Design
+- Enterprise Network Design
+- VLAN Design and Segmentation
 - Layer 2 Switching
 - IEEE 802.1Q Trunking
 - Router-on-a-Stick
 - Inter-VLAN Routing
 - DHCP Deployment
+- DHCP Relay (ip helper-address)
+- Static Infrastructure Addressing
 - IP Address Planning
 - Enterprise Network Documentation
 
 ### Cisco IOS
 
+- Basic Device Configuration
 - Interface Configuration
 - VLAN Management
+- Access Port Configuration
 - Trunk Configuration
-- Router Subinterfaces
-- DHCP Relay (ip helper-address)
-- Network Validation
+- Router Subinterface Configuration
+- Switch Management Interfaces
+- SSH Remote Management
+- RSA Key Generation
+- Local User Authentication
+- Login Banner (MOTD)
+- Port Security
+- Unused Port Hardening
 - Configuration Management
+- Network Validation
 
 ---
 
@@ -131,32 +146,42 @@ Detailed implementation documentation is organized within the `docs` directory.
 
 ### Inter-VLAN Routing Validation
 
-***Successful Ping Test from PC-IT01 (Endpoint) to Gateway, Server, and Shared Network Printer***
+***Successful ping test from PC-IT01 to the default gateway, domain controller (DC01), and shared network printer.***
+
 ![Inter-VLAN Routing Test](screenshots/routing/inter-vlan-ping-test.png)
 
-
-The completed network was validated by successfully verifying:
+The completed enterprise network was successfully validated by verifying:
 
 - VLAN segmentation
-- Trunk connectivity
+- Access port assignments
+- IEEE 802.1Q trunk connectivity
+- Router-on-a-Stick operation
 - Inter-VLAN routing
+- DHCP relay functionality
 - DHCP address assignment
 - Client-to-server communication
 - Client-to-printer communication
 - Cross-department connectivity
+- SSH remote management
+- Switch management interfaces
+- Port Security operation
+- Administrative shutdown of unused switch ports
 
 ---
 
 ## Future Improvements
 
-The following features will be implemented during the next phase of the project:
+The following enterprise networking features are planned for future implementation:
 
-- SSH Remote Management
-- Port Security
-- Switch Management Interfaces
-- Login Banner (MOTD)
-- Unused Port Hardening
 - Access Control Lists (ACLs)
+- DHCP Snooping
+- Dynamic ARP Inspection (DAI)
+- BPDU Guard
+- PortFast
+- Storm Control
+- Syslog Server Integration
+- SNMP Monitoring
+- Network Time Protocol (NTP)
 
 ---
 
@@ -174,10 +199,10 @@ The following features will be implemented during the next phase of the project:
 
 ✔ Network validation completed
 
-⬜ Security hardening (in progress)
+✔ Security hardening implemented (CAN BE IMPROVED)
 
-⬜ SSH management
+✔ SSH management implemented
+
+✔ Port security implemented
 
 ⬜ ACL implementation
-
-⬜ Port security
