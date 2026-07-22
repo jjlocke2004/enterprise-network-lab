@@ -2,7 +2,7 @@
 
 ## Overview 
 
-This network utilizes a structured private IPv4 addressing scheme using the **10.10.x.024** address space
+This network utilizes a structured private IPv4 addressing scheme using the **10.10.x.0/24** address space
 Each department is assigned to a dedicated subnet and VLAN to improve network segmentation, simpify
 administration, and prepare the network for future security policies and access contorl.
 
