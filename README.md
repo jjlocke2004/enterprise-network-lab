@@ -73,7 +73,7 @@ Enterprise-Network-Lab/
 │   ├── ip-addressing.md
 │   ├── vlan-design.md
 │   ├── device-inventory.md
-│   ├── dhcp-coonfiguration.md
+│   ├── dhcp-configuration.md
 │   ├── security-hardening.md
 │   ├── configuration-notes.md
 │   └── troubleshooting.md
