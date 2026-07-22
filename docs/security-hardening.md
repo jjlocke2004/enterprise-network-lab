@@ -17,7 +17,7 @@ Implemented security features include:
 
 ---
 
-# Switch Management INterfaces 
+# Switch Management Interfaces 
 
 Each Cisco switch was assigned a management IP address on the Management VLAN (VLAN 10)
 
