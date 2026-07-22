@@ -43,7 +43,7 @@ The physical router interface had not yet been enabled after configuration.
 The interface was enabled using:
 
 ```cisco
-interface FastEthernet0/0
+interface GigabitEthernet0/0
  no shutdown
 ```
 
