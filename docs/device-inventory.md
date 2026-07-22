@@ -50,6 +50,4 @@ This document provides an inventory of all hardware devices used throughout this
 
 # Design Summary
 
-The network follows a hierarchical design consisting of a routed core and two access layer switches.
-Departmental traffic is segmentedusing VLANs while centralized DHCP provides dynamic IP 
-allocation to all client devices
+The network follows a hierarchical design consisting of a central Layer 2 core switch, two access-layer switches, and an edge router providing inter-VLAN routing through Router-on-a-Stick.
