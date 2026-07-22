@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This document summarizes the major configuration tasks completed while building the out network.
+This document summarizes the major configuration tasks completed while building out the network.
 
 ---
 
@@ -78,11 +78,11 @@ Each VLAN was assigned:
 
 A centralized DHCP server was configured on DC01.
 
-Seperate DHCP scopes were created for each client VLAN.
+Separate DHCP scopes were created for each client VLAN.
 
 The router forwards DHCP broadcasts using the 'ip helper-address' command.
 
-Infrastructure devices reamin statically addressed.
+Infrastructure devices remain statically addressed.
 
 *DHCP Relay Configuration on the Router*
 
@@ -92,13 +92,13 @@ Infrastructure devices reamin statically addressed.
 
 # Validation
 
-The follwing functionality was successfully verified:
+The following functionality was successfully verified:
 
 - VLAN segmentation
 - Trunk communication
 - Inter-VLAN routing
 - DHCP address assignment
-- Cross-VLAN connctivity
+- Cross-VLAN connectivity
 - Server communication
 - Network printer communication
 
