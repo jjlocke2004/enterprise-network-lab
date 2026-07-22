@@ -3,7 +3,7 @@
 ## Overview
 
 The network is logically segmented using Virtual Local Area Networks (VLANs).
-Each department is assigned a dedicated VLAN to isolate broadcast domains, improve perfomance.
+Each department is assigned a dedicated VLAN to isolate broadcast domains, improve performance.
 and prepare the network for future security policies such as Access Control Lists (ACLs)
 
 Inter-VLAN communication is provided by a Cisco ISR 2911 router configured using Router-on-a-Stick (802.1Q encapsulation).
@@ -12,10 +12,10 @@ Inter-VLAN communication is provided by a Cisco ISR 2911 router configured using
 
 # VLAN Assignment
 
-| VLAN ID | VLAN Name | Department | Subent |
+| VLAN ID | VLAN Name | Department | Subnet |
 |---------|-----------|------------|--------|
 | 10 | MANAGEMENT | Management | 10.10.10.0/24 |
-| 20 | IT | Inforamtion Technology | 10.10.20.0/24 |
+| 20 | IT | Information Technology | 10.10.20.0/24 |
 | 30 | HR | Human Resources | 10.10.30.0/24 |
 | 40 | FINANCE | Finance | 10.10.40.0/24 |
 | 50 | SALES | Sales | 10.10.50.0/24 |
@@ -74,7 +74,7 @@ Inter-VLAN communication is provided by a Cisco ISR 2911 router configured using
 | SW-Core ↔ SW-Office1 | 802.1Q trunk carrying all VLAN traffic |
 | SW-Core ↔ SW-Office2 | 802.1Q trunk carrying all VLAN traffic |
 
-*Trunk Links Verficiation*
+*Trunk Links Verfication*
 
 ![Trunk Links](/screenshots/switching/trunk-links.png)
 
@@ -84,7 +84,7 @@ Inter-VLAN communication is provided by a Cisco ISR 2911 router configured using
 
 - Departmental traffic is segmented using dedicated VLAN.
 - Server infrastructure is isolated the domain controller
-  and network printer, are centrally connected to the core swtich
+  and network printer, are centrally connected to the core switch
 - Trunk links carry traffic for all VLANs between network devices.
 - This design provides a scalable foundation for implementing
   DHCP, ACLs, SSH management, and additional enterprise security controls.
