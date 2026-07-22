@@ -10,7 +10,7 @@ no service password-encryption
 !
 hostname SW-Core
 !
-enable secret 5 $1$mERr$OvnNRHE5goLSrORi3FY1X1
+enable secret <REDACTED>
 !
 !
 !
@@ -18,7 +18,7 @@ ip ssh version 2
 no ip domain-lookup
 ip domain-name enterprise.local
 !
-username admin secret 5 $1$mERr$6fdVVzAe9YVkjaaQkZ9aU/
+username admin secret <REDACTED>
 !
 !
 !
@@ -140,7 +140,7 @@ banner motd ^C
 !
 !
 line con 0
- password NetworkingLab2026!
+ password <REDACTED>
  login
 !
 line vty 0 4
