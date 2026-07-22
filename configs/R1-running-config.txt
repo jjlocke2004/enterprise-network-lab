@@ -12,7 +12,7 @@ hostname R1
 !
 !
 !
-enable secret 5 $1$mERr$OvnNRHE5goLSrORi3FY1X1
+enable secret <REDACTED>
 !
 !
 !
@@ -24,8 +24,7 @@ no ipv6 cef
 !
 !
 !
-username admin privilege 15 secret 5 $1$mERr$6fdVVzAe9YVkjaaQkZ9aU/
-!
+username admin privilege 15 secret <REDACTED>
 !
 license udi pid CISCO2911/K9 sn FTX1524N901-
 !
@@ -133,7 +132,7 @@ banner motd ^C
 !
 !
 line con 0
- password NetworkingLab2026!
+ password <REDACTED>
  login
 !
 line aux 0
