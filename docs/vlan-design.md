@@ -58,8 +58,8 @@ Inter-VLAN communication is provided by a Cisco ISR 2911 router configured using
 
 | Port | Connected Device | VLAN |
 |-----------|------------------|------|
-| Fa0/5 | DC01 | 60 |
-| Fa0/6 | Printer01 | 60 |
+| Fa0/4 | DC01 | 60 |
+| Fa0/5 | Printer01 | 60 |
 
 *Setting Access Port Assignments for Office Switch #1 (Repeated steps with corresponding ports for other switches)*
 
