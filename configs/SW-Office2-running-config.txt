@@ -16,7 +16,7 @@ enable secret <REDACTED>
 !
 ip ssh version 2
 no ip domain-lookup
-ip domain-name enterpise.local
+ip domain-name enterprise.local
 !
 username admin secret <REDACTED>
 !
