@@ -22,9 +22,9 @@ Rather than focusing solely on connectivity, this project emphasizes proper netw
 
 ## Network Overview
 
-### Physical Topology
+### Logical Network Topology
 
-![Physical Topology](/screenshots/topology/physical-topology.png)
+![Logical Network Topology](/diagrams/logical-network-topology.png)
 
 ### Devices
 
