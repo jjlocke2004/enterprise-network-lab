@@ -49,16 +49,15 @@ Rather than focusing solely on connectivity, this project emphasizes proper netw
 
 ## Implemented Features
 
-VLAN Segmentation
-Router-on-a-Stick
-Centralized DHCP
-SSH Remote Management
-Switch Management VLAN
-Port Security
-Unused Port Hardening
-MOTD Banner
-Static Infrastructure Addressing
-Enterprise Network Documentation
+- VLAN Segmentation
+- Router-on-a-Stick
+- Centralized DHCP
+- SSH Remote Management
+- Switch Management VLAN
+- Port Security
+- Unused Port Hardening
+- MOTD Banner
+- Static Infrastructure Addressing
 
 ---
 
@@ -96,13 +95,13 @@ Detailed implementation documentation is organized within the `docs` directory.
 
 | Document | Description |
 |-----------|-------------|
-| **![ip-addressing.md](docs/ip-addressing.md)** | IP addressing plan, subnet allocation, gateways, and DHCP scopes |
-| **![vlan-design.md](docs/vlan-design.md)** | VLAN assignments, switch port mappings, and trunk design |
-| **![device-inventory.md](docs/device-inventory.md)** | Inventory of all network devices and infrastructure |
-| **![configuration-notes.md](docs/configuration-notes.md)** | Summary of configuration tasks completed throughout implementation |
-| **![dhcp-configuration.md](docs/dhcp-configuration.md)** | DHCP server configuration, relay implementation, address pool design, and client address assignment |
-| **![security-hardening.md](docs/security-hardening.md)** | SSH management, switch management VLAN, MOTD banner, port security, and unused port hardening |
-| **![troubleshooting.md](docs/troubleshooting.md)** | Common issues encountered during deployment and their resolutions |
+| **[ip-addressing.md](docs/ip-addressing.md)** | IP addressing plan, subnet allocation, gateways, and DHCP scopes |
+| **[vlan-design.md](docs/vlan-design.md)** | VLAN assignments, switch port mappings, and trunk design |
+| **[device-inventory.md](docs/device-inventory.md)** | Inventory of all network devices and infrastructure |
+| **[configuration-notes.md](docs/configuration-notes.md)** | Summary of configuration tasks completed throughout implementation |
+| **[dhcp-configuration.md](docs/dhcp-configuration.md)** | DHCP server configuration, relay implementation, address pool design, and client address assignment |
+| **[security-hardening.md](docs/security-hardening.md)** | SSH management, switch management VLAN, MOTD banner, port security, and unused port hardening |
+| **[troubleshooting.md](docs/troubleshooting.md)** | Common issues encountered during deployment and their resolutions |
 
 ---
 
@@ -187,22 +186,18 @@ The following enterprise networking features are planned for future implementati
 
 ## Project Status
 
-**Current Status:** In Progress
+- [X] Enterprise network architecture
 
-✔ Enterprise network architecture completed
+- [X] Layer 2 switching
 
-✔ Layer 2 switching completed
+- [X] Router-on-a-Stick
 
-✔ Router-on-a-Stick implemented
+- [X] Centralized DHCP
 
-✔ Centralized DHCP implemented
+- [X] Network validation
 
-✔ Network validation completed
+- [X] SSH management
 
-✔ Security hardening implemented (CAN BE IMPROVED)
+- [X] Port security
 
-✔ SSH management implemented
-
-✔ Port security implemented
-
-⬜ ACL implementation
+- [ ] Access control lists
