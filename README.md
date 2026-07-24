@@ -84,6 +84,9 @@ Enterprise-Network-Lab/
 │   ├── routing/
 │   ├── dhcp/
 │
+├── diagrams/
+│   ├── logical-network-topology.png
+│
 └── Enterprise-Network-Lab.pkt
 ```
 
