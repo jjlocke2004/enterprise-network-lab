@@ -67,3 +67,29 @@ After setting the configuration for each network device I tested ssh to them fro
 **Purpose:** Restrict access to the Finance VLAN so that only Finance itself, the server VLAN (hosting Finance application/database resources), and IT (for support purposes) can reach it. All other departments are denied.
 
 **Applied on:** Finance subinterface, inbound direction
+
+I first ran this on R1 the router to configure the ACL rules to protect the Finance VLAN
+
+![Configuring the Finance VLAN ACL on R1](../screenshots/access-control-list/r1-finance-acl-config.png)
+
+I ran into a few issues at first by confiuring it wrong and allow for both inbound and outbound which didn't restrict access from other department VLANs. I also had a mismatch of capitalization in the ACL name. 
+
+I cleaned up the config on R1 and then retested ping from an IT and Finance PC to another Finance PC which succeeded as expected.
+
+![Ping Test - IT PC to Finance PC](screenshots/access-control-list/finance-acl-ping-test-it-to-finance.png)
+
+I then tested ping from an HR PC to a Finance PC which failed as wanted.
+
+![Ping Test - HR PC to Finance PC](../screenshots/access-control-list/finance-acl-ping-test-hr-to-finance.png)
+
+And I tested ping from a Sales PC to a Finance PC which also failed as wanted.
+
+![Ping Test - Sales PC to Finance PC](../screenshots/access-control-list/finance-acl-ping-test-sales-to-finance.png)
+
+---
+
+## Final Result
+
+All three ACLs were successfully configured and validated. Guest VLAN traffic is isolated from internal department networks, SSH management access is restricted to the IT VLAN, and the Finance VLAN is protected from unauthorized inter-VLAN access while remaining accessible to authorized IT, server, and Finance systems.
+
+The ACL configuration now enforces the intended least-privilege access controls and completes the network security configuration for this lab.
