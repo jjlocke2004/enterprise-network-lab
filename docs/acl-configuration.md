@@ -10,7 +10,7 @@ and protect sensitive department resources from unauthorized inter-VLAN traffic.
 
 ---
 
-ACL 1 - Guest VLAN isolation
+# ACL 1 - Guest VLAN isolation
 
 **Purpose:** Prevent the Guest VLAN from reaching any internal department subnet while still allowing
 general outbound connectivity. (Internet Access)
