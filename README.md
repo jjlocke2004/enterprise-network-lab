@@ -114,7 +114,7 @@ Detailed implementation documentation is organized within the `docs` directory.
 | **[configuration-notes.md](docs/configuration-notes.md)** | Summary of configuration tasks completed throughout implementation |
 | **[dhcp-configuration.md](docs/dhcp-configuration.md)** | DHCP server configuration, relay implementation, address pool design, and client address assignment |
 | **[security-hardening.md](docs/security-hardening.md)** | SSH management, switch management VLAN, MOTD banner, port security, and unused port hardening |
-| **[acl-configuration.md](docs/acl-configuration.md)** | ACL Configuration, Guest VLAN ACL, Finance VLAN ACL etc. | 
+| **[acl-configuration.md](docs/acl-configuration.md)** | ACL Configuration, least-privilege, Guest VLAN ACL, SSH Network Device Management Plane ACL, Finance VLAN ACL| 
 | **[troubleshooting.md](docs/troubleshooting.md)** | Common issues encountered during deployment and their resolutions |
 
 ---
@@ -214,4 +214,4 @@ The following enterprise networking features are planned for future implementati
 
 - [X] Port security
 
-- [ ] Access control lists (in-prog)
+- [X] Access control lists
