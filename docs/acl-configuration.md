@@ -33,6 +33,7 @@ I then switched the IP Config on the Guest PC to DHCP and verified it got an app
 ![Switching To DHCP on Guest PC](../screenshots/access-control-list/switching-to-dhcp-on-guest-pc-success.png)
 
 I then tried pinging tested the ACL from the Guest PC by first pinging the Guest VLAN Gateway which succeeded as expected.
+
 Then I tried pinging an IT PC and a Finance PC which both returned with host unreachable. That is the exact behavior I was looking to achieve
 
 ![Verifying Guest VLAN ACL from Guest PC](../screenshots/access-control-list/verifying-guest-vlan-acl-from-guest-pc.png)
