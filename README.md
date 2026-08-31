@@ -182,22 +182,6 @@ The completed enterprise network was successfully validated by verifying:
 
 ---
 
-## Future Improvements
-
-The following enterprise networking features are planned for future implementation:
-
-- Access Control Lists (ACLs)
-- DHCP Snooping
-- Dynamic ARP Inspection (DAI)
-- BPDU Guard
-- PortFast
-- Storm Control
-- Syslog Server Integration
-- SNMP Monitoring
-- Network Time Protocol (NTP)
-
----
-
 ## Project Status
 
 - [X] Enterprise network architecture
