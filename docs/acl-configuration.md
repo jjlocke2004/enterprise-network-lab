@@ -37,3 +37,33 @@ I then tried pinging tested the ACL from the Guest PC by first pinging the Guest
 Then I tried pinging an IT PC and a Finance PC which both returned with host unreachable. That is the exact behavior I was looking to achieve
 
 ![Verifying Guest VLAN ACL from Guest PC](../screenshots/access-control-list/verifying-guest-vlan-acl-from-guest-pc.png)
+
+---
+
+## ACL 2 - Management Plan Access Restriction
+
+**Purpose:** Restrict SSH access to network infrastructure (router and switches) so that only IT VLAN can remotely manage them.
+
+**Applied on:** VTY lines (router), inbound direction.
+
+*I ran this configuration on all network devices (Router R1, Switches - SWCore SWOffice1 and SWOffice2*
+
+![Configuring the MGMT Plane ACL on SWCore](../screenshots/access-control-list/configuring-the-mgmt-plane-acl-on-swcore.png)
+
+After setting the configuration for each network device I tested ssh to them from both an IT PC which should succeed, and an HR PC which should be denied.
+
+*SSH Fails to Router and Switches from HR PC as expected*
+
+![Testing SSH to Network Devices from HR PC](../screenshots/access-control-list/testing-ssh-to-network-devices-from-hr-pc.png)
+
+*SSH From IT PC succeeds for each network device so this ACL is behaving as intended*
+
+![Testing SSH to Network Devices from IT PC](testing-ssh-to-network-devices-from-it-pc.png)
+
+---
+
+## ACL 3 - Finance VLAN Protection
+
+**Purpose:** Restrict access to the Finance VLAN so that only Finance itself, the server VLAN (hosting Finance application/database resources), and IT (for support purposes) can reach it. All other departments are denied.
+
+**Applied on:** Finance subinterface, inbound direction
