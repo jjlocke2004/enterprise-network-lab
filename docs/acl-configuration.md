@@ -58,7 +58,7 @@ After setting the configuration for each network device I tested ssh to them fro
 
 *SSH From IT PC succeeds for each network device so this ACL is behaving as intended*
 
-![Testing SSH to Network Devices from IT PC](testing-ssh-to-network-devices-from-it-pc.png)
+![Testing SSH to Network Devices from IT PC](../screenshots/access-control-list/testing-ssh-to-network-devices-from-it-pc.png)
 
 ---
 
